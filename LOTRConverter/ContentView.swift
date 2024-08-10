@@ -75,7 +75,7 @@ struct ContentView: View {
                         showExchangeInfo.toggle()
                     } label: {
                         Image(systemName: "info.circle.fill")
-                            
+                        
                             .font(.largeTitle)
                             .foregroundStyle(.white)
                     }
@@ -83,6 +83,10 @@ struct ContentView: View {
                 }
             }
             .padding(2)
+        }
+        .sheet(isPresented: $showExchangeInfo) {
+            ExchangeInfo()
+                .presentationDetents([.fraction(0.99), .large])
         }
     }
 }
