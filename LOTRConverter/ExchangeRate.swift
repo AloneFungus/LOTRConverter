@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExtractedView: View {
+struct ExchangeRate: View {
     
     let leftImage: ImageResource
     let rightImage: ImageResource
@@ -33,7 +33,7 @@ struct ExtractedView: View {
 }
 
 #Preview {
-    ExtractedView(leftImage: .goldpiece,
+    ExchangeRate(leftImage: .goldpiece,
                   rightImage: .goldpenny,
                   text: "1 Gold Piece = 4 Gold Pennies")
 }

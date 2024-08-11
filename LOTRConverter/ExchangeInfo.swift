@@ -27,19 +27,19 @@ struct ExchangeInfo: View {
                     .font(.title2)
                     .padding()
                 
-                ExtractedView(leftImage: .goldpiece ,
+                ExchangeRate(leftImage: .goldpiece ,
                               rightImage: .goldpenny ,
                               text: "1 Gold Piece = 4 Gold Pennies")
                 
-                ExtractedView(leftImage: .goldpenny ,
+                ExchangeRate(leftImage: .goldpenny ,
                               rightImage: .silverpiece ,
                               text: "1 Gold Pennies = 4 Silver Piece")
                 
-                ExtractedView(leftImage: .silverpiece ,
+                ExchangeRate(leftImage: .silverpiece ,
                               rightImage: .silverpenny ,
                               text: "1 Silver Piece = 4 Silver Pennies")
                 
-                ExtractedView(leftImage: .silverpenny ,
+                ExchangeRate(leftImage: .silverpenny ,
                               rightImage: .copperpenny ,
                               text: "1 Silver Pennies = 4 Copper Pennies")
                 
