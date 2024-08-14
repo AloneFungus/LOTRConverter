@@ -39,58 +39,23 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
-                HStack{
-                    VStack {
-                        HStack {
-                            Image(leftCurrency.image)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 33)
-                                
-                            Text(leftCurrency.name)
-                                .font(.headline)
-                                .foregroundStyle(.white)
-                        }
-                        .padding(.bottom,5)
-                        .onTapGesture {
-                            showSelectCurrency.toggle()
-                        }
-                        .popoverTip(CurrencyTip(),
-                                    arrowEdge: .bottom)
-                        
-                        TextField("Amount", text: $leftAmount)
-                            .textFieldStyle(.roundedBorder)
-                            .focused($leftTyping)
-                            .keyboardType(.decimalPad)
-                            .padding(.bottom,10)
-                        
-                    }
+                HStack{               
+                    CurrencyField(currency: $leftCurrency,
+                                  showSelectCurrency: $showSelectCurrency,
+                                  field: $leftAmount,
+                                  typing: _leftTyping
+                    )
                     Image(systemName: "equal")
                         .font(.largeTitle)
                         .foregroundStyle(.white)
                         .symbolEffect(.pulse)
-                    VStack {
-                        HStack {
-                            Text(rightCurrency.name)
-                                .font(.headline)
-                                .foregroundStyle(.white)
-                            Image(rightCurrency.image)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 33)
-                                
-                        }
-                        .padding(.bottom,5)
-                        .onTapGesture {
-                            showSelectCurrency.toggle()
-                        }
-                        TextField("Amount", text: $rightAmount)
-                            .textFieldStyle(.roundedBorder)
-                            .multilineTextAlignment(.trailing)
-                            .focused($rightTyping)
-                            .keyboardType(.decimalPad)
-                            .padding(.bottom,10)
-                    }
+                    
+                    CurrencyField(currency: $rightCurrency,
+                                  showSelectCurrency: $showSelectCurrency,
+                                  field: $rightAmount,
+                                  typing: _rightTyping
+                    )
+                    .multilineTextAlignment(.trailing)
                 }
                 .padding()
                 .background(.black.opacity(0.5))
@@ -155,3 +120,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
