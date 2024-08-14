@@ -20,8 +20,8 @@ struct ContentView: View {
     @FocusState var leftTyping
     @FocusState var rightTyping
     
-    @State var leftCurrency: Currency = .silverPiece
-    @State var rightCurrency: Currency = .goldPiece
+    @Preference(\.leftCurrency) var leftCurrency: Currency
+    @Preference(\.rightCurrency) var rightCurrency: Currency
     
     var body: some View {
         ZStack {
